@@ -1,12 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>poMonitor</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xmlns="http://java.sun.com/xml/ns/javaee"
+  	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+  	id="WebApp_ID" 
+  	version="3.1">
+  	<display-name>poMonitor</display-name>
+  <!-- 一些系统的功用参数 -->
+  <context-param>
+  	<!-- 爬虫启动的时间间隔  /小时-->
+  	<param-name>clawerInterval</param-name>
+  	<param-value>24</param-value>
+  </context-param>
+  
+  <context-param>
+  	<!-- 爬虫的启动时间 整点种24小时制 一般在半夜-->
+  	<param-name>clawerStartTime</param-name>
+  	<param-value>2</param-value>
+  </context-param>
+  
+  <context-param>
+  	<!-- 倾向性分析的启动时间 整点种24小时制 -->
+  	<param-name>tendStartTime</param-name>
+  	<param-value>24</param-value>
+  </context-param>
+  
+  <context-param>
+  	<!-- 倾向性分析的时间间隔  小时-->
+  	<param-name>tendInterval</param-name>
+  	<param-value>24</param-value>
+  </context-param>
+
+  <!-- 用于启动爬虫服务的Listener -->	
+<!--  临时注释
+  <listener>
+  	<listener-class>pomonitor.listener.ClawerService</listener-class>
+  </listener>
+--> 
+   <!-- 用于启动文章倾向性分析服务的Listener -->	
+<!--  
+  <listener>
+  	<listener-class>pomonitor.listener.ArticleTendService</listener-class>
+  </listener>
+-->  
+	
+  <servlet>
+    <servlet-name>AnalyseServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>pomonitor.controller.AnalyseServlet</servlet-class>
+  </servlet>
+
+    <context-param>
+        <!-- 爬虫的启动时间 整点种24小时制 一般在半夜-->
+        <param-name>clawerStartTime</param-name>
+        <param-value>2</param-value>
+    </context-param>
+
+    <context-param>
+        <!-- 倾向性分析的启动时间 整点种24小时制 -->
+        <param-name>tendStartTime</param-name>
+        <param-value>22</param-value>
+    </context-param>
+
+    <context-param>
+        <!-- 倾向性分析的时间间隔  小时-->
+        <param-name>tendInterval</param-name>
+        <param-value>24</param-value>
+    </context-param>
+
+    <!-- 用于启动爬虫服务的Listener -->
+    <!--  <listener>
+        <listener-class>pomonitor.listener.ClawerService</listener-class>
+    </listener>-->
+
+    <!-- 用于启动文章倾向性分析服务的Listener -->
+<!--      
+    <listener>
+        <listener-class>pomonitor.listener.ArticleTendService</listener-class>
+    </listener>
+-->
+    <servlet>
+        <servlet-name>AnalyseServlet</servlet-name>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <description>This is the description of my J2EE component</description>
+        <servlet-class>pomonitor.controller.AnalyseServlet</servlet-class>
+    </servlet>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>TopicDiscoveryServlet</servlet-name>
+        <servlet-class>pomonitor.controller.TopicDiscoveryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HotWordsServlet</servlet-name>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <description>This is the description of my J2EE component</description>
+        <servlet-class>pomonitor.servlet.HotWordsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SiteEvaluationServlet</servlet-name>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <description>This is the description of my J2EE component</description>
+        <servlet-class>pomonitor.servlet.SiteEvaluationServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>TopicDiscoveryServlet</servlet-name>
+        <url-pattern>/TD.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HotWordsServlet</servlet-name>
+        <url-pattern>/servlet/HotWordsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SiteEvaluationServlet</servlet-name>
+        <url-pattern>/servlet/SiteEvaluationServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

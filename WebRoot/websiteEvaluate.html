@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>网站评测</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<script type="text/javascript" src="./js/lib/jquery-1.11.3.js"></script>
+<style type="text/css">
+body {
+	margin: 1%;
+	padding: 1%;
+}
+
+#main1 {
+	padding: 1%;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+    var mydate = Date();
+    console.log(mydate);
+</script>
+	起止时间:&nbsp&nbsp
+	<input type="date" id="date1" name="user_date" value="2015-08-01" />
+	&nbsp&nbsp至&nbsp&nbsp
+	<input type="date" id="date2" name="user_date" /> &nbsp&nbsp
+	<button type="button" id="btn_websiteEvaluate">确定</button>
+	<script type="text/javascript">
+    document.getElementById("date2").valueAsDate = new Date();
+</script>
+	<div id="div_website_eval" name="news"></div>
+	<script type="text/javascript" src="./js/lib/echarts.js"></script>
+	<script type="text/javascript" src="./js/lib/esl.js"></script>
+	<script type="text/javascript" src="./js/websiteEvaluate-default.js"></script>
+	<script type="text/javascript" src="./js/websiteEvaluate.js"></script>
+</body>
+</html>

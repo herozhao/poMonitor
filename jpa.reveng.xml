@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+    <table name="levelword" catalog="pomonitor" class="LeverWord"></table>
+    <table name="user" catalog="pomonitor"></table>
+    <table name="ideaword" catalog="pomonitor" class="IdeaWord"></table>
+    <table name="negword" catalog="pomonitor" class="NegWord"></table>
+    <table name="wordproperty" catalog="pomonitor"
+           class="WordProperty">
+    </table>
+    <table name="newstend" catalog="pomonitor" class="NewsTend"></table>
+    <table name="synonymousword" catalog="pomonitor" class="SynonyMousWord"></table>
+</hibernate-reverse-engineering>

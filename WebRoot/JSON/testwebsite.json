@@ -1,0 +1,54 @@
+﻿{
+<<<<<<< HEAD
+"messag":"Query Success",
+"results":{
+"series":[
+{"data":[0],"name":"褒"},
+{"data":[1],"name":"中"},
+{"data":[0],"name":"贬"}],
+"xAxis":["光明网"]},
+"status":0}
+=======
+    "results": {
+        "series": [
+            {
+                "data": [
+                    0.5,
+                    0.4,
+                    0.625,
+                    0.6666666666666666,
+                    1
+                ],
+                "name": "褒"
+            },
+            {
+                "data": [
+                    0.5,
+                    0.6,
+                    0.375,
+                    0.3333333333333333,
+                    0
+                ],
+                "name": "中"
+            },
+            {
+                "data": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "name": "贬"
+            }
+        ],
+        "xAxis": [
+            "搜狐",
+            "凤凰",
+            "新华网",
+            "网易",
+            "华声在线"
+        ]
+    }
+}
+>>>>>>> branch 'develop' of https://github.com/herozhao/poMonitor.git
